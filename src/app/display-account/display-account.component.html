@@ -1,0 +1,24 @@
+<div class="col-sm-4">
+<div class="card" style="width: 18rem; margin-bottom : 1rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{accountDetails.name}}</h5>
+    <p class="card-text">Current Balance is {{accountDetails.balance}}</p>
+
+    <p class="card-text text-warning">Current Status is {{accountDetails.status}}</p>
+    <!-- <button class="btn btn-sm btn-primary">Change Status</button> -->
+    <div class="form-group">
+      <label for="changeStatus" class="text-danger font-weight-bold">Change Status</label>
+      <select name="changeStatus" class="form-control" (change)="onstatusChange($event)">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="changeBalance" class="text-info font-weight-bold">Enter New Balance</label>
+      <input type="text" name="changeBalance" id="changeBalance" class="form-control" placeholder="Ex:- 10000" #updatedBalance>
+      <button class="btn btn-sm btn-success" (click)="onChangeBalance(updatedBalance)">Change Balance</button>
+    </div>
+    </div>  
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+
+      <app-create-account (serverCreated)="createServer($event)"></app-create-account>
+
+  <div class="row mt-5 mb-2">
+    <div class="col-md-12">
+      <h4>Account Details</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <app-display-account *ngFor="let account of accounts; let i = index" [id]="i" [accountDetails]="account" (statusChanged)="onStatusChanged($event)" (balanceChanged)="onBalanceChange($event)"></app-display-account>
+  </div>
+</div>
