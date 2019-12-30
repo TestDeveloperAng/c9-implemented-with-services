@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { LoggingService } from '../shared/logging.service';
-
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
