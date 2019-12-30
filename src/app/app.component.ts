@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+
+import { LoggingService } from '../shared/logging.service';
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -24,16 +27,17 @@ export class AppComponent  {
 
   createServer(accountDetails){
     this.accounts.push(accountDetails);
-    console.log('New Account Created with Details :- '+ accountDetails);
+    // console.log('New Account Created with Details :- '+ accountDetails);
   }
 
   onStatusChanged(accountDataChanged){
   this.accounts[accountDataChanged.id].status = accountDataChanged.status;
-  console.log('Status of' + accountDataChanged.id +' changed to '+ accountDataChanged.status);
+  this.LoggingService.statusChangedLog(accountDataChanged.id,accountDataChanged.status);
+  // console.log('Status of' + accountDataChanged.id +' changed to '+ accountDataChanged.status);
   }
 
   onBalanceChange(accountDataChanged){
     this.accounts[accountDataChanged.id].balance = accountDataChanged.balance;
-    console.log('Balance of' + accountDataChanged.id +' changed to '+ accountDataChanged.balance);
+    // console.log('Balance of' + accountDataChanged.id +' changed to '+ accountDataChanged.balance);
   }
 }
